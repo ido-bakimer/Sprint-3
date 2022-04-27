@@ -6,8 +6,9 @@ export class EmailApp extends React.Component{
 
     state = {
         emails: [],
-        filterBy: null,
+        showByStatus: null,
         previewclicked: null,
+        filterBy:{},
     }
 
     componentDidMount() {
@@ -15,8 +16,20 @@ export class EmailApp extends React.Component{
     }
 
     loadEmails = () => {
-        emailService.query(this.state.filterBy)
+        emailService.query(this.state.showByStatus,this.state.filterBy)
             .then(emails => this.setState({ emails }))
+    }
+
+    onSetShowByStatus = (status) => {
+        this.setState({ showByStatus: status }, () => {
+            console.log('ShowByStatus from email App', this.state.showByStatus);
+            this.loadEmails()
+        })
+    }
+    onSetFilter = (filterBy)=>{
+        this.setState({ filterBy }, () => {
+            this.loadEmails()
+        })
     }
     
     onPreviewClick = (email) => {
@@ -26,13 +39,24 @@ export class EmailApp extends React.Component{
         }
         this.props.history.push('/email/' + email.id)
       }
+      onRemove = (ev,id) => {
+          ev.stopPropagation()
+          console.log(id)
+        emailService.remove(id)
+            .then(this.loadEmails)
+    }
+    onStartComposing = ()=>{
+        this.props.history.push('/email/compose')
+    }
+
 
 
     render(){
         const {emails} = this.state
 
         return <div className="email-app">
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick}/>
+            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} onSetFilter={this.onSetFilter} onRemove={this.onRemove}/>
+
         </div>
     }
 }
