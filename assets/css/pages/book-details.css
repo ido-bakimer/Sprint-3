@@ -1,0 +1,17 @@
+.book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    align-items: center;
+}
+
+.book-details .img-container {
+    max-width: 500px;
+}
+.book-details .red{
+    color: red;
+}
+.book-details .green{
+    color: green;
+}

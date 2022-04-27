@@ -1,0 +1,14 @@
+.book-filter {
+    padding: 20px;
+}
+
+.book-filter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.book-filter form label {
+    margin-bottom: 5px;
+}

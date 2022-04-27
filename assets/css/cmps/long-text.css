@@ -1,0 +1,7 @@
+.showTxt{
+    color: blue;
+    text-decoration: underline;
+}
+.showTxt:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+.book-preview {
+    height: 350px;
+    width: 250px;
+    padding: 10px 0px 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.457);
+}
+
+.book-preview .img-container {
+    max-width: 200px;
+}
