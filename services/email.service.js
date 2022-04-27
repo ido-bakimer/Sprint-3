@@ -37,8 +37,10 @@ function remove(emailId) {
 }
 function updateEmail(id, change) {
   const emails = _loadFromStorage()
-  const email = emails.find(email => id === email.id)
-    email = { ...email, ...change };
+  let email = emails.findIndex(email => id === email.id)
+    emails[email] = { ...emails[email], ...change };
+    console.log('email',email);
+    console.log(emails);
     _saveToStorage(emails);
     return Promise.resolve(email);
   }

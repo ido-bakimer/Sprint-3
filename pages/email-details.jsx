@@ -5,7 +5,7 @@ export class EmailDetails extends React.Component{
         email: null
     }
 
-    ComponentDidMount(){
+    componentDidMount(){
         this.loadEmail()
     }
 
@@ -20,10 +20,11 @@ export class EmailDetails extends React.Component{
     }
     render(){
         const { email } = this.state
-        console.log(this.props.match.params);
+        console.log(email);
+        if(!email) return <h1></h1>
         return <div className="email-details">
             <h1>{email.from}</h1>
-            <h2>subject: <h3>{email.subject}</h3></h2>
+            <h2>subject: {email.subject}</h2>
             <p>{email.body}</p>
 
         </div>
