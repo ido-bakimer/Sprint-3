@@ -3,6 +3,7 @@ import { AppHeader } from './cmps/app-header.jsx'
 import { Home } from './pages/home.jsx'
 import { About } from './pages/about.jsx'
 import { BookDetails } from './pages/book-details.jsx'
+import { KeepApp } from './pages/keep-app.jsx'
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 
