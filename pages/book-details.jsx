@@ -1,4 +1,4 @@
-import { MoreText } from "../cmps/long-text.jsx"
+import { LongText } from "../cmps/long-text.jsx"
 import { bookService } from "../services/book.service.js"
 import { ReviewAdd } from "../cmps/review-add.jsx"
 import { ReviewList } from "../cmps/reviews-list.jsx"
@@ -85,7 +85,7 @@ export class BookDetails extends React.Component {
         return <section className="book-details">
             <h3>Name : {book.title}</h3>
             <h3 className={name}>Price : {bookPrice}</h3>
-            <MoreText text={book.description} />
+            <LongText text={book.description} />
             <p>Book Length : <span>{displayLength}</span></p>
             <p>Subtitles: {book.subtilte}</p>
             <p>Author/s: {book.authors}</p>

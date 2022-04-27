@@ -1,4 +1,4 @@
-export class MoreText extends React.Component {
+export class LongText extends React.Component {
     state = {
         isShortTxtShow: true,
         text: this.props.text.substring(0, 100),
