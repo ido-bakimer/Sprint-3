@@ -1,0 +1,24 @@
+.note-color-palette button {
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.note-color-1 {
+  background-color: #b1ffaa;
+}
+.note-color-2 {
+  background-color: #68fff0;
+}
+.note-color-3 {
+  background-color: #75acff;
+}
+.note-color-4 {
+  background-color: #c988ff;
+}
+.note-color-5 {
+  background-color: #ff8882;
+}
+.note-color-6 {
+  background-color: #ffc996;
+}
