@@ -1,0 +1,31 @@
+.note-list-container {
+  column-count: 1;
+  margin-bottom: 50px;
+}
+
+.note-list h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* MEDIA QUERIES */
+/* MEDIUM */
+@media (min-width: 640px) {
+  .note-list-container {
+    column-count: 2;
+  }
+}
+
+/* LARGE */
+@media (min-width: 900px) {
+  .note-list-container {
+    column-count: 3;
+  }
+}
+
+/* X-LARGE */
+@media (min-width: 1200px) {
+  .note-list-container {
+    column-count: 4;
+  }
+}
