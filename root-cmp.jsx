@@ -3,7 +3,6 @@ import { AppHeader } from './cmps/app-header.jsx'
 import { Home } from './pages/home.jsx'
 import { About } from './pages/about.jsx'
 import { BookDetails } from './pages/book-details.jsx'
-import { EmailApp } from './pages/email-app.jsx'
 
 import { KeepApp } from './pages/keep-app.jsx'
 import { EmailApp } from './pages/email-app.jsx'
