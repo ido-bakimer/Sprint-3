@@ -7,9 +7,7 @@ export const emailService = {
   remove,
   updateEmail,
   sendEmail,
-  // removeReview,
-  // addReview,
-  // onAddBookGoogle,
+  sortEmails,
 }
 function getById(emailId) {
   const emails = _loadFromStorage()
@@ -84,6 +82,11 @@ function updateEmail(id, change) {
   return Promise.resolve(email);
 }
 
+function sortEmails(emails){
+_saveToStorage(emails)
+return Promise.resolve()
+}
+
 function _saveToStorage(emails) {
   storageService.saveToStorage('emailsDB', emails)
 }
@@ -125,7 +128,7 @@ function _createemails() {
     body: "Hello Aviv,\nWe are beyond excited to announce the launch of our newest software instrument,\
          the OB-Xa V. Welcome to music history, reborn!\nOB-Xa V a recreation of Oberheim's legendary analog\
           synthesizer OB-Xa, whose dynamic sound made it into countless hits of some of the greatest artists.\n\
-          The most recognizable moment of this analog synthesizer is the legendary intro in Van Halen`s hit ‘Jump`\
+          The most recognizable moment of this analog synthesizer is the legendary intro in Van Halen`s hit `Jump`\
            and its powerful sonics appeared in many albums by iconic artists, such as Prince, The Police, or Queen.\
             Today, it`s used by the likes of Flume, Chrome Sparks, Calvin Harris, and Venetian Snares.",
     isRead: true,

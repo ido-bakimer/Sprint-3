@@ -41,7 +41,6 @@ export class EmailApp extends React.Component{
       }
       onRemove = (ev,id) => {
           ev.stopPropagation()
-          console.log(id)
         emailService.remove(id)
             .then(this.loadEmails)
     }
@@ -55,7 +54,7 @@ export class EmailApp extends React.Component{
         const {emails} = this.state
 
         return <div className="email-app">
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} onSetFilter={this.onSetFilter} onRemove={this.onRemove}/>
+            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} onSetFilter={this.onSetFilter} onRemove={this.onRemove} loadEmails={this.loadEmails}/>
 
         </div>
     }
