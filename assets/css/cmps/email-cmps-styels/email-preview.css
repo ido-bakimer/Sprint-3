@@ -1,3 +1,25 @@
 .email-preview.read{
     background-color: var(--email-read);
 }
+
+/* .email-preview{
+    width: 60rem;
+} */
+
+.email-preview .from{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.email-preview .subject{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.email-preview .btns{
+    opacity: 0;
+}
+.email-preview:hover .btns{
+    opacity: 1;
+}
