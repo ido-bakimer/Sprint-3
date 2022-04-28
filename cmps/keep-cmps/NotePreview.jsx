@@ -1,6 +1,5 @@
 import { noteService } from '../../services/Keep.service.js';
 import { NoteColorPalette } from '../keep-cmps/NoteColorPalette.jsx';
-// import { NoteColorPalette } from './NoteColorPalette.jsx';
 import { DynamicNote } from './DynamicNote.jsx';
 
 
@@ -42,7 +41,7 @@ export class NotePreview extends React.Component {
     }
 
     addDefaultImgSrc(ev) {
-        ev.target.src = 'https://media.giphy.com/media/hrRJ41JB2zlgZiYcCw/giphy.gif';
+        ev.target.src = 'http://ca-upload.com/here/img/626aa35a4fb81.jpg';
     }
 
     handleInputSumbit = ({ keyCode, target }) => {
@@ -86,7 +85,6 @@ export class NotePreview extends React.Component {
     }
 
     toggleTodo = (idx) => {
-        // Messy. Ask for better way
         let todoIdx = idx;
         let currTodos = this.state.note.info.todos;
         let currTodo = currTodos[todoIdx];
@@ -195,7 +193,7 @@ export class NotePreview extends React.Component {
 
                     <div className="note-preview-btn-container ">
                         <button onClick={this.togglePin}>
-                        <i class="fa-solid fa-thumbtack"></i>
+                        <i className="fa-solid fa-thumbtack"></i>
                         </button>
                     </div>
                     <div className="note-preview-btn-container ">

@@ -4,8 +4,10 @@ import { storageService } from './storage.service.js';
 export const noteService = {
   query,
   createNote,
-  updateNote,
   deleteNote,
+  copyNote,
+  updateNote,
+  handleImgSrcError,
   saveNotesToStorage,
 };
 
@@ -31,6 +33,15 @@ function deleteNote(noteId) {
   return Promise.resolve();
 }
 
+function copyNote(noteId) {
+  let noteIdx = gNotes.findIndex((note) => note.id === noteId);
+  let notesCopy = JSON.parse(JSON.stringify(gNotes));
+  let noteCopy = notesCopy.copyWithin(0, noteIdx, noteIdx + 1).shift();
+  noteCopy.id = utilService.makeId();
+  gNotes.push(noteCopy);
+  saveNotesToStorage();
+  return Promise.resolve();
+}
 
 function updateNote(noteId, note) {
   let noteIdx = gNotes.findIndex((note) => note.id === noteId);
@@ -44,6 +55,15 @@ function updateNote(noteId, note) {
   return Promise.resolve();
 }
 
+function changeVideoLinkEmbed(linkStr) {
+  let embedLink = linkStr.replace('watch?v=', 'embed/');
+  return embedLink;
+}
+
+function handleImgSrcError(image) {
+  let defaultImg = 'assets\img\UltraMegaHackerMan.png';
+  image.src = defaultImg;
+}
 
 function createNote(inputVal, noteType) {
   if (!inputVal) return;
@@ -61,7 +81,24 @@ function createNote(inputVal, noteType) {
       note.info = {
         txt: inputVal,
       };
-      break;  
+      break;
+    case 'NoteImg':
+      note.info = {
+        imgUrl: inputVal,
+      };
+      break;
+    case 'NoteVideo':
+      note.info = {
+        videoUrl: changeVideoLinkEmbed(inputVal),
+      };
+      break;
+    case 'NoteTodos':
+      note.info = {
+        label: inputVal,
+        todos: [],
+      };
+      break;
+
     default:
       return 'switch error';
   }
@@ -79,7 +116,7 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt:
-            "yoyo here comes the hackerman",
+            "very manly note",
         },
         style: {
           backgroundColor: '#b1ffaa',
@@ -87,14 +124,53 @@ function _createNotes() {
       },
       {
         id: utilService.makeId(),
-        type: 'NoteText',
+        type: 'NoteImg',
         isPinned: true,
         info: {
-          txt:
-            "very manly note",
+          imgUrl: 'https://i.imgur.com/JfUd9W5.png',
         },
         style: {
-          backgroundColor: '#b1ffaa',
+          backgroundColor: '#68fff0',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+          imgUrl: 'https://img.csfd.cz/files/images/user/profile/160/378/160378443_4eccbd.jpg',
+        },
+        style: {
+          backgroundColor: '#75acff',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        type: 'NoteVideo',
+        isPinned: false,
+        info: {
+          videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        },
+        style: {
+          backgroundColor: '#c988ff',
+        },
+      },
+
+      {
+        id: utilService.makeId(),
+        type: 'NoteTodos',
+        isPinned: false,
+        info: {
+          label: 'To do',
+          todos: [
+            { txt: 'learn react kung fu', isDone: true },
+            { txt: 'kill nazis', isDone: true },
+            { txt: 'water plants', isDone: true },
+            { txt: 'Repeat', isDone: false },
+          ],
+        },
+        style: {
+          backgroundColor: '#ff8882',
         },
       },
     ];

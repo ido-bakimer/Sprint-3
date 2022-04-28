@@ -1,7 +1,24 @@
 export function DynamicNoteInput({ noteType, handleInputSumbit }) {
-
+    let plcholder;
+    switch (noteType) {
+        case 'NoteText':
+            plcholder = "Enter text"
+            break;
+        case 'NoteImg':
+            plcholder = "Enter img url"
+            break;
+        case 'NoteVideo':
+            plcholder = "Enter video url"
+            break;
+        case 'NoteTodos':
+            plcholder = "Enter list title"
+            break;
+        default:
+            plcholder = 'switch error';
+            break;
+    }
 
     return (
-        <input name='NoteText' placeholder="type a note" onKeyDown={handleInputSumbit} />
+        <input name={noteType} placeholder={plcholder} onKeyDown={handleInputSumbit} />
     )
 }
