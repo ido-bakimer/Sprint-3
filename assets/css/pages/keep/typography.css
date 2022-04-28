@@ -1,0 +1,6 @@
+/* TYPOGRAPHY */
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url(fonts/ubuntu/Ubuntu-Light.ttf);
+}

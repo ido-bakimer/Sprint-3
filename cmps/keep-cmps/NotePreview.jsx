@@ -195,7 +195,7 @@ export class NotePreview extends React.Component {
 
                     <div className="note-preview-btn-container ">
                         <button onClick={this.togglePin}>
-                            <i className="note-btn fas fa-thumbtack"></i>
+                        <i class="fa-solid fa-thumbtack"></i>
                         </button>
                     </div>
                     <div className="note-preview-btn-container ">

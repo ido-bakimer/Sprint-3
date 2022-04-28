@@ -19,3 +19,19 @@
 @import './cmps/book-filter.css';
 @import './cmps/long-text.css';
 @import './cmps/email-cmps-styels/email-preview.css';
+
+/* keep imports */
+@import './pages/keep/NoteApp.css';
+@import './pages/keep/CreateNote.css';
+@import './pages/keep/NoteList.css';
+@import './pages/keep/NoteColorPalette.css';
+@import './pages/keep/NotePreview.css';
+
+
+
+
+/* @import '../../apps/Keep/assets/NoteApp.css';
+@import '../../apps/Keep/assets/CreateNote.css';
+@import '../../apps/Keep/assets/NoteList.css';
+@import '../../apps/Keep/assets/NotePreview.css';
+@import '../../apps/Keep/assets/NoteColorPalette.css'; */

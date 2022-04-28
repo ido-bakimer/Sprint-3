@@ -1,0 +1,68 @@
+/* BASE */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'ubuntu', sans-serif;
+}
+
+body {
+  background-color: #515151;
+}
+
+main,
+.loader-container {
+  /* min-height: calc(100vh - 160px); */
+  height: calc(100vh - 80px);
+}
+
+/* main {
+  background-color: #202124;
+} */
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 340px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* MEDIA QUERIES */
+
+/* SMALL */
+
+/* MEDIUM */
+@media (min-width: 640px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+/* LARGE */
+@media (min-width: 900px) {
+  .container {
+    max-width: 850px;
+  }
+}
+
+/* X-LARGE */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1150px;
+  }
+}

@@ -18,6 +18,7 @@
 .note-preview-control-panel button,
 .note-todo-list button,
 .note-edit-btn-container button {
+  font-family: fa-solid;
   background-color: inherit;
   outline: none;
   border: none;
@@ -32,6 +33,10 @@
   color: #000;
 }
 
+.note-preview img {
+  width: 100%;
+}
+
 .note-preview input {
   color: #444;
   background-color: inherit;
@@ -39,12 +44,21 @@
   outline: none;
 }
 
+.note-preview .visibility-hidden {
+  visibility: hidden;
+}
 
 .note-preview ::placeholder {
   color: #444;
 }
 
+.note-todo-list button {
+  color: rgb(253, 90, 90);
+}
 
+.note-todo-list .done {
+  text-decoration: line-through;
+}
 
 .note-edit-control-panel input {
   border: 2px solid #202124;
