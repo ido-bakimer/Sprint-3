@@ -41,7 +41,6 @@ export class EmailApp extends React.Component{
       }
       onRemove = (ev,id) => {
           ev.stopPropagation()
-          console.log(id)
         emailService.remove(id)
             .then(this.loadEmails)
     }
