@@ -17,3 +17,8 @@
     font-family: lato-x-bold;
     src: url('../../fonts/Lato-Black.ttf');
 }
+
+@font-face {
+    font-family: fa-solid;
+    src: url('../../fonts/fa-solid-900.ttf');
+}
