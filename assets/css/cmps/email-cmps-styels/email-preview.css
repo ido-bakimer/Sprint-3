@@ -17,9 +17,9 @@
     overflow: hidden;
 }
 
-.email-preview .btns{
+.email-preview .email-btns{
     opacity: 0;
 }
-.email-preview:hover .btns{
+.email-preview:hover .email-btns{
     opacity: 1;
 }

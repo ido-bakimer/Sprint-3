@@ -20,7 +20,8 @@
 @import './cmps/long-text.css';
 @import './cmps/email-cmps-styels/email-preview.css';
 @import './cmps/email-cmps-styels/email-compose.css';
-@import './cmps/email-cmps-styels/email-list.css';
+@import './cmps/email-cmps-styels/email-status.css';
+@import './cmps/email-cmps-styels/email-details.css';
 
 /* keep imports */
 @import './pages/keep/NoteApp.css';

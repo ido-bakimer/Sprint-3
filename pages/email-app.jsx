@@ -1,6 +1,9 @@
 import { emailService } from '../services/email.service.js'
 
 import { EmailList } from '../cmps/email-cmps/email-list.jsx'
+import { EmailFilter } from '../cmps/email-cmps/email-filter.jsx'
+import { EmailStatus } from '../cmps/email-cmps/email-status.jsx'
+import { EmailCompose } from '../cmps/email-cmps/email-compose.jsx'
 
 export class EmailApp extends React.Component {
 
@@ -9,10 +12,14 @@ export class EmailApp extends React.Component {
         showByStatus: null,
         previewclicked: null,
         filterBy: {},
+        isCopmposing:false,
     }
 
     componentDidMount() {
         this.loadEmails()
+        const seearchParams = new URLSearchParams(this.props.location.search);
+        const status = seearchParams.get('status');
+        if(!status==='null')this.onSetShowByStatus(status)
     }
 
     loadEmails = () => {
@@ -22,7 +29,6 @@ export class EmailApp extends React.Component {
 
     onSetShowByStatus = (status) => {
         this.setState({ showByStatus: status }, () => {
-            console.log('ShowByStatus from email App', this.state.showByStatus);
             this.loadEmails()
         })
     }
@@ -59,8 +65,11 @@ export class EmailApp extends React.Component {
     
 
     onStartComposing = () => {
-
-        this.props.history.push('/email/compose')
+        this.setState({isCopmposing:true})
+        // this.props.history.push('/email/compose')
+    }
+    onEndComposing= () => {
+        this.setState({isCopmposing:false})
     }
 
 
@@ -69,7 +78,10 @@ export class EmailApp extends React.Component {
         const { emails } = this.state
 
         return <div className="email-app">
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} onSetFilter={this.onSetFilter} onRemove={this.onRemove} loadEmails={this.loadEmails} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} />
+            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus}/>
+            <EmailFilter emails={emails} onSetFilter={this.onSetFilter} loadEmails={this.loadEmails} />
+            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} />
+            {this.state.isCopmposing&&<EmailCompose onEndComposing={this.onEndComposing} />}
 
         </div>
     }
