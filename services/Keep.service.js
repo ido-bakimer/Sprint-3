@@ -122,12 +122,36 @@ function _createNotes() {
           backgroundColor: '#b1ffaa',
         },
       },
+
       {
         id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: true,
         info: {
-          imgUrl: 'https://i.imgur.com/JfUd9W5.png',
+          imgUrl: 'https://lh3.googleusercontent.com/-aT9vJTmiPVk/X9OD0PKtRbI/AAAAAAAAAoo/CoOzSONsJhMJN73MXc9NySP_SodvEVqmwCLcBGAsYHQ/h1200/programming.gif',
+        },
+        style: {
+          backgroundColor: '#ff8882',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        type: 'NoteText',
+        isPinned: true,
+        info: {
+          txt:
+            "And the bartender says, ''Success, but you're not ready!'' So a JavaScript function walks into a bar.''",
+        },
+        style: {
+          backgroundColor: '#b1ffaa',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        type: 'NoteImg',
+        isPinned: true,
+        info: {
+          imgUrl: 'testtestthisisnotaurl',
         },
         style: {
           backgroundColor: '#68fff0',
@@ -136,12 +160,23 @@ function _createNotes() {
       {
         id: utilService.makeId(),
         type: 'NoteImg',
-        isPinned: false,
+        isPinned: true,
         info: {
           imgUrl: 'https://img.csfd.cz/files/images/user/profile/160/378/160378443_4eccbd.jpg',
         },
         style: {
           backgroundColor: '#75acff',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        type: 'NoteImg',
+        isPinned: true,
+        info: {
+          imgUrl: 'https://www.hrkgame.com/media/games/.thumbnails/header_J6fRrxm.jpg/header_J6fRrxm-460x215.jpg',
+        },
+        style: {
+          backgroundColor: '#b1ffaa',
         },
       },
       {
@@ -171,6 +206,22 @@ function _createNotes() {
         },
         style: {
           backgroundColor: '#ff8882',
+        },
+      },
+      {
+        id: utilService.makeId(),
+        type: 'NoteTodos',
+        isPinned: true,
+        info: {
+          label: 'To do',
+          todos: [
+            { txt: 'vini', isDone: false },
+            { txt: 'vidi', isDone: false },
+            { txt: 'vici', isDone: false },
+          ],
+        },
+        style: {
+          backgroundColor: '#c988ff',
         },
       },
     ];
