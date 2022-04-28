@@ -1,0 +1,19 @@
+.email-list .add-email {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background: #8b00a7 ;
+	background-color:#8b00a7;
+	border-radius:3px;
+	border:1px solid #631277;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.email-list .add-email:hover {
+	background:#5c006f;
+	background-color:#66007b;
+}

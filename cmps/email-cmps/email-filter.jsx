@@ -12,7 +12,6 @@ export class EmailFilter extends React.Component {
     }
 
     handleChange = ({ target }, callBack) => {
-        console.log(target);
         const field = target.name
         this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: target.value } }), callBack)
     }

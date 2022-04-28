@@ -28,17 +28,16 @@ function query(showByStatus, filterBy) {
     const isRead = filterBy.read === 'read'
     emails = emails.filter(email => email.isRead === isRead)
   }
-// when star is redy uncoment
-  // if (filterBy.star) {
-  //   const isStarred = filterBy.star === 'starred'
-  //   emails = emails.filter(email => email.starred === isStarred)
-  // }
-  if(filterBy.content){
-    emails = emails.filter(email =>{
-      return(
-        email.body.includes(filterBy.content)||
-        email.subject.includes(filterBy.content)||
-        email.from.includes(filterBy.content)||
+  if (filterBy.star) {
+    const isStarred = filterBy.star === 'starred'
+    emails = emails.filter(email => email.isStarred === isStarred)
+  }
+  if (filterBy.content) {
+    emails = emails.filter(email => {
+      return (
+        email.body.includes(filterBy.content) ||
+        email.subject.includes(filterBy.content) ||
+        email.from.includes(filterBy.content) ||
         email.to.includes(filterBy.content)
       )
     }
@@ -76,15 +75,13 @@ function updateEmail(id, change) {
   const emails = _loadFromStorage()
   let email = emails.findIndex(email => id === email.id)
   emails[email] = { ...emails[email], ...change };
-  console.log('email', email);
-  console.log(emails);
   _saveToStorage(emails);
   return Promise.resolve(email);
 }
 
-function sortEmails(emails){
-_saveToStorage(emails)
-return Promise.resolve()
+function sortEmails(emails) {
+  _saveToStorage(emails)
+  return Promise.resolve()
 }
 
 function _saveToStorage(emails) {
@@ -287,7 +284,7 @@ function _createemails() {
     body: 'Hey Mika!\nDo you wanna eat pizza tomorrow?\nCall me if you wanna hangout',
     isRead: true,
     isStarred: false,
-    sentAt: 1627074009000,
+    sentAt: 1627074009002,
     from: 'muki@appsus.com',
     to: 'mika@appsus.com',
   },
@@ -298,7 +295,7 @@ function _createemails() {
     body: 'Hey,\nCan you tell me more about Coding Academy?\nI heard nice things about it.',
     isRead: true,
     isStarred: false,
-    sentAt: 1630081327000,
+    sentAt: 1630081327001,
     from: 'muki@appsus.com',
     to: 'mika@appsus.com',
   },
@@ -401,7 +398,7 @@ function _createemails() {
     //     body: 'Hey Mika!\nI thought about it a lot and...I love you.\nWill you marry me?',
     //     isRead: true,
     //     isStarred: false,
-    //     sentAt: 1627074009000,
+    //     sentAt: 1627074009001,
     //     from: 'muki@appsus.com',
     //     to: 'mika@appsus.com',
     //   },

@@ -32,7 +32,6 @@ handleChange = ({ target }) => {
             <button onClick={this.onCloseComposing}>❌</button>
             <form className="flex column" onSubmit={this.onSendMail}>
                 <input name="to" type="email" placeholder="to" onChange={this.handleChange} />
-
                 <input name="subject" type="text" placeholder="subject" onChange={this.handleChange} />
                 <textarea name="body" rows="20" cols="100" onChange={this.handleChange}></textarea>
                 <button>Send email</button>

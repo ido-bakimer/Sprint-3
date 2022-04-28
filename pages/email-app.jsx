@@ -2,13 +2,13 @@ import { emailService } from '../services/email.service.js'
 
 import { EmailList } from '../cmps/email-cmps/email-list.jsx'
 
-export class EmailApp extends React.Component{
+export class EmailApp extends React.Component {
 
     state = {
         emails: [],
         showByStatus: null,
         previewclicked: null,
-        filterBy:{},
+        filterBy: {},
     }
 
     componentDidMount() {
@@ -16,7 +16,7 @@ export class EmailApp extends React.Component{
     }
 
     loadEmails = () => {
-        emailService.query(this.state.showByStatus,this.state.filterBy)
+        emailService.query(this.state.showByStatus, this.state.filterBy)
             .then(emails => this.setState({ emails }))
     }
 
@@ -26,35 +26,50 @@ export class EmailApp extends React.Component{
             this.loadEmails()
         })
     }
-    onSetFilter = (filterBy)=>{
+    onSetFilter = (filterBy) => {
         this.setState({ filterBy }, () => {
             this.loadEmails()
         })
     }
-    
+
     onPreviewClick = (email) => {
         console.log(email);
         if (!email.isRead) {
-          emailService.updateEmail(email.id, { isRead: true }).then(this.loadEmails)
+            emailService.updateEmail(email.id, { isRead: true }).then(this.loadEmails)
         }
         this.props.history.push('/email/' + email.id)
-      }
-      onRemove = (ev,id) => {
-          ev.stopPropagation()
+    }
+    onRemove = (ev, id) => {
+        ev.stopPropagation()
         emailService.remove(id)
             .then(this.loadEmails)
     }
-    onStartComposing = ()=>{
+    onToggleStar = (ev, email) => {
+        ev.stopPropagation()
+        const change = !email.isStarred
+        emailService.updateEmail(email.id, { isStarred: change })
+            .then(this.loadEmails)
+    }
+    onToggleRead =(ev, email) =>{
+        ev.stopPropagation()
+        const change = !email.isRead
+        emailService.updateEmail(email.id, { isRead: change })
+            .then(this.loadEmails)
+    }
+    
+
+    onStartComposing = () => {
+
         this.props.history.push('/email/compose')
     }
 
 
 
-    render(){
-        const {emails} = this.state
+    render() {
+        const { emails } = this.state
 
         return <div className="email-app">
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} onSetFilter={this.onSetFilter} onRemove={this.onRemove} loadEmails={this.loadEmails}/>
+            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} onSetFilter={this.onSetFilter} onRemove={this.onRemove} loadEmails={this.loadEmails} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} />
 
         </div>
     }
