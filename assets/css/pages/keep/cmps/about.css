@@ -1,0 +1,40 @@
+.about-container {
+  margin-top: 300px;
+  color: white;
+}
+
+.about-container h2 {
+  margin-bottom: 10px;
+}
+
+.about-container a {
+  color: #444;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 3px;
+  /* margin-right: 10px; */
+}
+
+.about-container a:not(:first-child) {
+  margin: 20px;
+}
+
+.about-container nav {
+  margin: 20px 0px;
+}
+
+.about-container a:hover {
+  background-color: #444;
+  color: white;
+}
+
+.about-team h4,
+.about-vision h4 {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.about-team li,
+.about-vision li {
+  margin-bottom: 10px;
+}

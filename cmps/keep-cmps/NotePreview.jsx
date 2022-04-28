@@ -196,26 +196,32 @@ export class NotePreview extends React.Component {
                     <div className="note-preview-btn-container ">
                         <button onClick={this.togglePin}>
                             <i className="note-btn fas fa-thumbtack"></i>
+                            <p>pin</p>
                         </button>
                     </div>
                     <div className="note-preview-btn-container ">
                         <button onClick={this.showColorPalette}>
                             <i className="note-btn fas fa-palette"></i>
+                            <p>color</p>
                         </button>
                     </div>
                     <div className="note-preview-btn-container ">
                         <button onClick={this.onToggleEditNote}>
                             <i className="note-btn fas fa-edit"></i>
+                            <p>edit</p>
                         </button>
                     </div>
                     <div className="note-preview-btn-container ">
                         <button onClick={this.onCopyNote}>
                             <i className="note-btn fas fa-copy"></i>
+                            <p>copy</p>
+
                         </button>
                     </div>
                     <div className="note-preview-btn-container ">
                         <button onClick={this.onDeleteNote}>
                             <i className="note-btn fas fa-trash"></i>
+                            <p>delete</p>
                         </button>
                     </div>
                 </section>
