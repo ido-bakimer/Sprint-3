@@ -78,11 +78,12 @@ export class EmailApp extends React.Component {
         const { emails } = this.state
 
         return <div className="email-app">
-            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus}/>
             <EmailFilter emails={emails} onSetFilter={this.onSetFilter} loadEmails={this.loadEmails} />
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} />
             {this.state.isCopmposing&&<EmailCompose onEndComposing={this.onEndComposing} />}
-
+            <div className="email-body">
+            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus}/>
+            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} />
+            </div>
         </div>
     }
 }

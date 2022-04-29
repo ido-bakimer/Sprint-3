@@ -184,7 +184,7 @@ function _createNotes() {
         type: 'NoteVideo',
         isPinned: false,
         info: {
-          videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+          videoUrl: 'https://www.youtube.com/watch?v=fBRzD6dwJfw',
         },
         style: {
           backgroundColor: '#c988ff',

@@ -1,0 +1,13 @@
+.email-app{
+    display: flex;
+    flex-direction: column;
+justify-content: left;
+}
+
+.email-body{
+    padding: 15px;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(63, 63, 63, 0.637);
+}

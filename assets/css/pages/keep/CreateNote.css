@@ -30,7 +30,9 @@
 }
 
 .note-create .active {
-  color: black;
+  color: rgb(70, 70, 70);
+      text-shadow: 0px 0px 6px #797979;
+
 }
 
 .note-btn {
@@ -44,7 +46,7 @@
 
 /* MEDIA QUERIES */
 /* MEDIUM */
-@media (min-width: 640px) {
+@media (min-width: 680px) {
   .note-create {
     flex-direction: row;
     /* width: 600px; */

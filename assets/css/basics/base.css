@@ -3,10 +3,16 @@
 }
 
 body {
-    background-color: #fff;
+    background:linear-gradient(270deg, #410093, #735b91);
+        background-size: 100%;
     font-family: lato, sans-serif;
-    color: antiquewhite;
+    color: white;
+    /* margin: 0%; */
 }
+
+/* body>*:not(.app-header){
+    margin: 10px;
+} */
 
 h1,
 h2,
