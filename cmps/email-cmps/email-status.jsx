@@ -4,8 +4,8 @@ export function EmailStatus({ onStartComposing, onSetShowByStatus, }) {
 
     return <section className="email-status">
         <i className="add-email fa-solid fa-plus" onClick={onStartComposing}>compose</i>
-        <button onClick={() => onSetShowByStatus(null)}>ALL</button>
-        <button onClick={() => onSetShowByStatus('inbox')}>Inbox</button>
-        <button onClick={() => onSetShowByStatus('sent')}>Sent</button>
+        <button className="email-status-btn" onClick={() => onSetShowByStatus(null)}>All</button>
+        <button className="email-status-btn" onClick={() => onSetShowByStatus('inbox')}>Inbox</button>
+        <button className="email-status-btn" onClick={() => onSetShowByStatus('sent')}>Sent</button>
     </section>
 }

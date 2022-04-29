@@ -5,6 +5,7 @@ justify-content: left;
 }
 
 .email-body{
+    justify-content: space-between;
     padding: 15px;
     margin: 0%;
     display: flex;
