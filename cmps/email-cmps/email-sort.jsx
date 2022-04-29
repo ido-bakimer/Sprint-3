@@ -47,12 +47,11 @@ export class EmailSort extends React.Component {
 
     render() {
         return <div className="email-sort">
-            <label htmlFor="sort" title="Sort by">
+            <label htmlFor="sort" title="Sort by">Sort by:</label>
                 <select name="sort" id="sort" onChange={(ev) => { this.sortBy(ev) }}>
                     <option value="date">Date</option>
                     <option value="subject">Subject</option>
                 </select>
-            </label>
         </div>
     }
 }

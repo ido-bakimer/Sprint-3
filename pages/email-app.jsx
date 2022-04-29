@@ -1,4 +1,5 @@
 import { emailService } from '../services/email.service.js'
+import { noteService } from '../services/Keep.service.js'
 
 import { EmailList } from '../cmps/email-cmps/email-list.jsx'
 import { EmailFilter } from '../cmps/email-cmps/email-filter.jsx'
@@ -12,14 +13,14 @@ export class EmailApp extends React.Component {
         showByStatus: null,
         previewclicked: null,
         filterBy: {},
-        isCopmposing:false,
+        isCopmposing: false,
     }
 
     componentDidMount() {
         this.loadEmails()
         const seearchParams = new URLSearchParams(this.props.location.search);
         const status = seearchParams.get('status');
-        if(!status==='null')this.onSetShowByStatus(status)
+        if (!status === 'null') this.onSetShowByStatus(status)
     }
 
     loadEmails = () => {
@@ -45,31 +46,50 @@ export class EmailApp extends React.Component {
         }
         this.props.history.push('/email/' + email.id)
     }
-    onRemove = (ev, id) => {
+    onRemove = (ev, email) => {
         ev.stopPropagation()
-        emailService.remove(id)
+        emailService.updateEmail(email.id, { removeAt: Date.now(), status: 'trash' })
             .then(this.loadEmails)
+        if (email.removeAt) {
+            emailService.remove(email.id)
+                .then(this.loadEmails)
+        }
     }
+
+    onRecycle = (ev, email) => {
+        ev.stopPropagation()
+        let status = email.to
+        if (status === 'muki@appsus.com') status = 'inbox'
+        else status = 'sent'
+        emailService.updateEmail(email.id, { removeAt: null, status: 'trash' }).then(this.loadEmails)
+    }
+
     onToggleStar = (ev, email) => {
         ev.stopPropagation()
         const change = !email.isStarred
         emailService.updateEmail(email.id, { isStarred: change })
             .then(this.loadEmails)
     }
-    onToggleRead =(ev, email) =>{
+
+    onToggleRead = (ev, email) => {
         ev.stopPropagation()
         const change = !email.isRead
         emailService.updateEmail(email.id, { isRead: change })
             .then(this.loadEmails)
     }
-    
 
     onStartComposing = () => {
-        this.setState({isCopmposing:true})
+        this.setState({ isCopmposing: true })
         // this.props.history.push('/email/compose')
     }
-    onEndComposing= () => {
-        this.setState({isCopmposing:false})
+    onEndComposing = () => {
+        this.setState({ isCopmposing: false })
+    }
+
+    makeNotefromEmail = (ev,email) => {
+        ev.stopPropagation()
+        console.log('added',email.body);
+    // noteService.createNote(val,'NoteText')
     }
 
 
@@ -78,10 +98,10 @@ export class EmailApp extends React.Component {
         const { emails } = this.state
 
         return <div className="email-app">
-            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus}/>
+            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} />
             <EmailFilter emails={emails} onSetFilter={this.onSetFilter} loadEmails={this.loadEmails} />
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} />
-            {this.state.isCopmposing&&<EmailCompose onEndComposing={this.onEndComposing} />}
+            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} onRecycle={this.onRecycle} makeNotefromEmail={this.makeNotefromEmail} />
+            {this.state.isCopmposing && <EmailCompose onEndComposing={this.onEndComposing} />}
 
         </div>
     }
