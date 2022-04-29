@@ -7,7 +7,7 @@ import { BookDetails } from './pages/book-details.jsx'
 import { KeepApp } from './pages/keep-app.jsx'
 import { EmailApp } from './pages/email-app.jsx'
 import { EmailDetails } from './pages/email-details.jsx'
-import { EmailCompose } from './pages/email-compose.jsx'
+import { EmailCompose } from './cmps/email-cmps/email-compose.jsx'
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 
