@@ -22,3 +22,8 @@
     font-family: fa-solid;
     src: url('../../fonts/fa-solid-900.ttf');
 }
+
+@font-face {
+    font-family: yawho;
+    src: url('../../fonts/Yahoo.ttf');
+}

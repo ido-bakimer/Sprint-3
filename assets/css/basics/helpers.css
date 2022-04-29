@@ -28,6 +28,16 @@
     margin-inline-end: 15px;
 }
 
+.app-header{
+    background:linear-gradient(320deg, #410093, #735b91);
+}
+
+.YAWHO{
+        font-family: YAWHO;
+        font-size: 1.8rem;
+}
+
+
 .active {
     color: red;
 }

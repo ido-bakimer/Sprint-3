@@ -7,7 +7,7 @@ export function NoteList({ notes, loadNotes }) {
     const isPinned = notes[0].isPinned;
     return (
         <div className="note-list">
-            <h3>{isPinned && 'Pinned Notes' || !isPinned && 'Unpinned Notes'}</h3>
+            <h4>{isPinned && 'Pinned Notes' || !isPinned && 'Unpinned Notes'}</h4>
             <div className="note-list-container">
 
                 {notes.map(note => {

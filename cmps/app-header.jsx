@@ -2,7 +2,7 @@ const { Link, NavLink, withRouter } = ReactRouterDOM
 
 function _AppHeader(props) {
     return <header className="app-header flex space-between align-center pad20">
-        <h3>Books store.חרטה</h3>
+        <h3 className="YAWHO">YAWHO?</h3>
 
         <nav>
             <NavLink to="/" exact>Home</NavLink>

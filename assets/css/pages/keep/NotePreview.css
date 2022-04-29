@@ -6,9 +6,10 @@
   background-color: white;
   color: #444;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 8px;
   page-break-inside: avoid;
   margin-bottom: 10px;
+box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.5);
 }
 
 .note-preview [contentEditable] {
@@ -80,5 +81,5 @@
 }
 
 .note-todo-input::placeholder {
-  color: #fff;
+  color: rgb(144, 144, 144);
 }
