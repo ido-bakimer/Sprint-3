@@ -1,5 +1,9 @@
+.email-status{
+	display: flex;
+	flex-direction: column;
+}
+
 .email-status .add-email {
-	box-shadow:inset 0px 1px 0px 0px #54a3f7;
 	background: #8b00a7 ;
 	background-color:#8b00a7;
 	border-radius:3px;

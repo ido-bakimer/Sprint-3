@@ -1,10 +1,14 @@
 .email-preview.read{
     background-color: var(--email-read);
+    color: rgb(187, 187, 187);
 }
 
-/* .email-preview{
-    width: 60rem;
-} */
+.email-preview{
+background-color: rgba(139, 139, 139, 0.375);
+color: rgb(255, 255, 255);
+border: rgba(143, 143, 143, 0.367) solid 0.02px;
+border-top: 0px;
+}
 
 .email-preview .from{
     text-overflow: ellipsis;

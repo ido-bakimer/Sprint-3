@@ -1,6 +1,7 @@
 .note-list-container {
   column-count: 1;
   margin-bottom: 50px;
+  padding: 5px;
 }
 
 .note-list h3 {

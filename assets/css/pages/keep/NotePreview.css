@@ -8,8 +8,8 @@
   padding: 10px;
   border-radius: 8px;
   page-break-inside: avoid;
-  margin-bottom: 10px;
-box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.5);
+  margin-bottom: 15px;
+/* box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.5); */
 }
 
 .note-preview [contentEditable] {
@@ -82,4 +82,13 @@ box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.5);
 
 .note-todo-input::placeholder {
   color: rgb(144, 144, 144);
+}
+
+.note-todo-input::placeholder {
+  color: rgb(144, 144, 144);
+}
+
+.note-preview:hover {
+
+box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.5);
 }
