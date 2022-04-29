@@ -1,7 +1,7 @@
 import { LongText } from "../cmps/long-text.jsx"
 import { bookService } from "../services/book.service.js"
-import { ReviewAdd } from "../cmps/review-add.jsx"
-import { ReviewList } from "../cmps/reviews-list.jsx"
+import { ReviewAdd } from "../cmps/book-cmps/review-add.jsx"
+import { ReviewList } from "../cmps/book-cmps/reviews-list.jsx"
 
 // ({ book, onGoBack, onRemoveBook })
 export class BookDetails extends React.Component {

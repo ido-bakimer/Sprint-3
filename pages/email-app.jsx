@@ -1,5 +1,6 @@
 import { emailService } from '../services/email.service.js'
 import { noteService } from '../services/Keep.service.js'
+import { eventBusService } from '../services/event-bus-service.js'
 
 import { EmailList } from '../cmps/email-cmps/email-list.jsx'
 import { EmailFilter } from '../cmps/email-cmps/email-filter.jsx'
@@ -20,7 +21,7 @@ export class EmailApp extends React.Component {
         this.loadEmails()
         const seearchParams = new URLSearchParams(this.props.location.search);
         const status = seearchParams.get('status');
-        if (!status === 'null') this.onSetShowByStatus(status)
+        this.onSetShowByStatus(status)
     }
 
     loadEmails = () => {
@@ -29,6 +30,7 @@ export class EmailApp extends React.Component {
     }
 
     onSetShowByStatus = (status) => {
+        if (status === 'null') return
         this.setState({ showByStatus: status }, () => {
             this.loadEmails()
         })
@@ -44,15 +46,21 @@ export class EmailApp extends React.Component {
         if (!email.isRead) {
             emailService.updateEmail(email.id, { isRead: true }).then(this.loadEmails)
         }
-        this.props.history.push('/email/' + email.id)
+        this.props.history.push(`/email/${email.id}?status=${this.state.showByStatus}`)
     }
     onRemove = (ev, email) => {
         ev.stopPropagation()
         emailService.updateEmail(email.id, { removeAt: Date.now(), status: 'trash' })
-            .then(this.loadEmails)
+            .then(()=>{
+                this.loadEmails()
+                eventBusService.emit('msg',{val:`Email transferred to trash`,isSuccess:true})
+            })
         if (email.removeAt) {
             emailService.remove(email.id)
-                .then(this.loadEmails)
+                .then(()=>{
+                    this.loadEmails()
+                    eventBusService.emit('msg',{val:`Email deleted successfully`,isSuccess:true})
+                })
         }
     }
 
@@ -61,7 +69,9 @@ export class EmailApp extends React.Component {
         let status = email.to
         if (status === 'muki@appsus.com') status = 'inbox'
         else status = 'sent'
-        emailService.updateEmail(email.id, { removeAt: null, status: 'trash' }).then(this.loadEmails)
+        emailService.updateEmail(email.id, { removeAt: null, status }).then(()=>{
+            this.loadEmails()
+            eventBusService.emit('msg',{val:`Email restored successfully`,isSuccess:true})})
     }
 
     onToggleStar = (ev, email) => {
@@ -91,6 +101,8 @@ export class EmailApp extends React.Component {
         let val = `Note from mail: |from: ${email.from} |to: ${email.to} |subject: ${email.subject} |body: ${email.body}`
 
         noteService.createNote(val, 'NoteText')
+        eventBusService.emit('msg',{val:`note created successfully`,isSuccess:true})
+
     }
 
 
@@ -102,7 +114,7 @@ export class EmailApp extends React.Component {
             <EmailFilter emails={emails} onSetFilter={this.onSetFilter} loadEmails={this.loadEmails} />
             {this.state.isCopmposing && <EmailCompose onEndComposing={this.onEndComposing} />}
             <div className="email-body">
-                <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} />
+                <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} showByStatus={this.state.showByStatus} />
                 <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} onRecycle={this.onRecycle} makeNotefromEmail={this.makeNotefromEmail} />
             </div>
         </div>

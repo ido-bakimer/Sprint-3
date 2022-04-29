@@ -51,7 +51,7 @@ function sendEmail(newEmail) {
   const emails = _loadFromStorage()
   const email = {
     id: utilService.makeId(),
-    status: 'send',
+    status: 'sent',
     subject: newEmail.subject,
     body: newEmail.body,
     isRead: true,

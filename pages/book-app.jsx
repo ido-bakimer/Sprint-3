@@ -1,8 +1,8 @@
 import { bookService } from '../services/book.service.js'
 
-import { GoogleSearch } from '../cmps/google-search.jsx'
-import { BookList } from '../cmps/book-list.jsx'
-import { BookFilter } from '../cmps/book-filter.jsx'
+import { GoogleSearch } from '../cmps/book-cmps/google-search.jsx'
+import { BookList } from '../cmps/book-cmps/book-list.jsx'
+import { BookFilter } from '../cmps/book-cmps/book-filter.jsx'
 
 
 

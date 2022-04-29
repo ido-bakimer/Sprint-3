@@ -23,7 +23,7 @@ export class EmailCompose extends React.Component {
     onSendMail = (ev) => {
         ev.preventDefault()
         emailService.sendEmail(this.state.newMail)
-            .then(this.onCloseComposing)
+            .then(this.props.onEndComposing)
 
     }
 

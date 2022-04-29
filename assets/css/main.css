@@ -24,6 +24,7 @@
 @import './cmps/email-cmps-styels/email-compose.css';
 @import './cmps/email-cmps-styels/email-status.css';
 @import './cmps/email-cmps-styels/email-details.css';
+@import './cmps/msg-box.css';
 
 /* keep imports */
 @import './pages/keep/NoteApp.css';
