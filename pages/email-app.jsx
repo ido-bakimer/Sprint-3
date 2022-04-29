@@ -86,10 +86,11 @@ export class EmailApp extends React.Component {
         this.setState({ isCopmposing: false })
     }
 
-    makeNotefromEmail = (ev,email) => {
+    makeNotefromEmail = (ev, email) => {
         ev.stopPropagation()
-        console.log('added',email.body);
-    // noteService.createNote(val,'NoteText')
+        let val = `Note from mail: |from: ${email.from} |to: ${email.to} |subject: ${email.subject} |body: ${email.body}`
+
+        noteService.createNote(val, 'NoteText')
     }
 
 
@@ -101,8 +102,8 @@ export class EmailApp extends React.Component {
             <EmailFilter emails={emails} onSetFilter={this.onSetFilter} loadEmails={this.loadEmails} />
             {this.state.isCopmposing && <EmailCompose onEndComposing={this.onEndComposing} />}
             <div className="email-body">
-            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} />
-            <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} onRecycle={this.onRecycle} makeNotefromEmail={this.makeNotefromEmail} />
+                <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} />
+                <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} onRecycle={this.onRecycle} makeNotefromEmail={this.makeNotefromEmail} />
             </div>
         </div>
     }
