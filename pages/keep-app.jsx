@@ -2,11 +2,14 @@ import { CreateNote } from '../cmps/keep-cmps/CreateNote.jsx';
 import { NoteList } from '../cmps/keep-cmps/NoteList.jsx';
 import { noteService } from '../services/Keep.service.js';
 import { Loader } from '../cmps/Loader.jsx';
+import { EmailCompose } from '../cmps/email-cmps/email-compose.jsx';
 
 export class KeepApp extends React.Component {
 
   state = {
-    notes: null
+    notes: null,
+    isCopmposing: false,
+    info:'',
   }
 
   componentDidMount() {
@@ -35,6 +38,15 @@ export class KeepApp extends React.Component {
     return unPinnedNotes
   }
 
+  onStartComposing = (info) => {
+    console.log(info);
+    
+    this.setState({ isCopmposing: true, info:info })
+  }
+
+  onEndComposing = () => {
+    this.setState({ isCopmposing: false })
+  }
   render() {
     const { notes } = this.state;
     if (!notes) return <Loader />
@@ -44,8 +56,9 @@ export class KeepApp extends React.Component {
     return (
       <section className="note-app container">
         <CreateNote loadNotes={this.loadNotes} />
-        <NoteList notes={pinnedNotes} loadNotes={this.loadNotes} />
-        <NoteList notes={unPinnedNotes} loadNotes={this.loadNotes} />
+        <NoteList notes={pinnedNotes} onStartComposing={this.onStartComposing} loadNotes={this.loadNotes} />
+        <NoteList notes={unPinnedNotes} onStartComposing={this.onStartComposing} loadNotes={this.loadNotes} />
+        {this.state.isCopmposing && <EmailCompose onEndComposing={this.onEndComposing} info={this.state.info} />}
       </section>
     )
   }
