@@ -1,7 +1,7 @@
 export function Home() {
 
     return <section className="home">
-        <h2>Welcome to the BookShop!!!</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ea velit quae repudiandae possimus similique reiciendis. Tempora, odit sapiente quos, totam sunt commodi provident laudantium perferendis modi architecto fugit porro.</p>
+        <h2 class="animate__animated animate__fadeInRight">Welcome to YAWHO?</h2>
+        <p>If you ever wanted to find <span>EVERY BOOK THAT EVER EXISTED ONLINE</span>, or <span>STORE YOUR VERY OWN PERSONILISED NOTES</span> and even <span>SENDING AND RECIEVEING* MAILS, NO PASSWORD OR ACOUNT NEEDED</span>, then you have come to the right place! Here at YAWHO™ we pride ourselved with cutting edge react technology, and we hope you may find some use of our vast application list.</p>
     </section>
 }

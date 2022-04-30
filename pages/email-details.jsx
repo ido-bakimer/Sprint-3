@@ -90,13 +90,17 @@ export class EmailDetails extends React.Component {
         const { email } = this.state
         if (!email) return <h1></h1>
         return <div className="email-details">
+            <div className= "email-details-navbar">
             <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} showByStatus={this.state.showByStatus} />
+            </div>
+            <div className="email-details-body">
             <EmailBtns email={this.state.email} onToggleStar={this.onToggleStar} onRemove={this.onRemove} onToggleRead={this.onToggleRead} onReplying={this.onReplying} onRecycle={this.onRecycle} />
             <h1>{email.status === 'inbox' ? email.from : email.to}</h1>
             <h2>subject: {email.subject}</h2>
             <p>{email.body}</p>
             {this.state.isCopmposing && <EmailCompose onEndComposing={this.onEndComposing} />}
-            {this.state.isReplying && <EmailCompose onEndComposing={this.onEndComposing} email={this.state.email} />}
+            {this.state.isReplying && <EmailCompose onEndComposing={this.onEndComposing} email={this.state.email} />} 
+            </div>
         </div>
     }
 

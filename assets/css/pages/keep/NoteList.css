@@ -1,7 +1,10 @@
 .note-list-container {
+  background-color: rgba(255, 255, 255, 0.645);
+  border-radius: 3px;
   column-count: 1;
   margin-bottom: 50px;
-  padding: 5px;
+  padding: 20px;
+  break-inside: avoid-column;
 }
 
 .note-list h3 {

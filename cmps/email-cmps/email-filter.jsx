@@ -36,7 +36,7 @@ export class EmailFilter extends React.Component {
                         <option value="unread">unread</option>
                         <option value="read">read</option>
                     </select>
-                </label>
+                    </label>
                 <label htmlFor="star" title="Filter by star">
                     <select name="star" id="star" onChange={(ev) => { this.handleChange(ev, this.onFilter) }}>
                         <option value="">ALL</option>
@@ -44,8 +44,8 @@ export class EmailFilter extends React.Component {
                         <option value="starred">starred</option>
                     </select>
                 </label>
-                <EmailSort emails={this.props.emails} loadEmails={this.props.loadEmails}/>
             </form>
+            <EmailSort emails={this.props.emails} loadEmails={this.props.loadEmails}/>
 
         </section>
     }

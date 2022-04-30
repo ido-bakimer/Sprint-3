@@ -111,10 +111,10 @@ export class EmailApp extends React.Component {
         const { emails } = this.state
 
         return <div className="email-app">
+            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} showByStatus={this.state.showByStatus} />
+            <div className="email-body">
             <EmailFilter emails={emails} onSetFilter={this.onSetFilter} loadEmails={this.loadEmails} />
             {this.state.isCopmposing && <EmailCompose onEndComposing={this.onEndComposing} />}
-            <div className="email-body">
-                <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} showByStatus={this.state.showByStatus} />
                 <EmailList emails={emails} onPreviewClick={this.onPreviewClick} onRemove={this.onRemove} onToggleStar={this.onToggleStar} onToggleRead={this.onToggleRead} onRecycle={this.onRecycle} makeNotefromEmail={this.makeNotefromEmail} />
             </div>
         </div>

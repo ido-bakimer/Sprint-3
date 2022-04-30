@@ -1,4 +1,5 @@
 :root {
     --main-bg-color: lightblue;
-    --email-read: rgba(103, 103, 103, 0.726);
+    --email-bg-color: rgba(74, 74, 74, 0.375);
+    --email-read: rgba(203, 203, 203, 0.467);
 }

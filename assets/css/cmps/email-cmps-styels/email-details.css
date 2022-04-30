@@ -1,8 +1,50 @@
+.email-details{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.442);
+}
 
+.email-details .email-btns{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    color: gray;
+    background-color: white;
+   /* margin-left: 5px; */
+}
 
+.email-details .email-btns:first-child{
+    color: gray;
+    padding: 10px;
+}
+
+.email-details .email-btns:nth-child(2):hover{
+cursor: pointer;
+}
+
+.email-details .add-email{
+padding: 11.5px;
+margin-bottom: 0px;
+}
+
+.email-details .email-status-btn{
+display: flexbox;}
+
+.email-details-navbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-details .email-status-btn:hover{
+    background-color: black;
+}
 
 .email-details .email-btns i{
 cursor: pointer;
 margin-right: 15px;
 background-color: white;
+}
+
+.email-details-body{
+flex-grow: 1;
 }

@@ -1,29 +1,47 @@
 .email-preview.read{
     background-color: var(--email-read);
-    color: rgb(187, 187, 187);
+    color: rgb(214, 214, 214);
+    color: gray;
 }
 
 .email-preview{
-background-color: rgba(139, 139, 139, 0.375);
-color: rgb(255, 255, 255);
+background-color: white;
 border: rgba(143, 143, 143, 0.367) solid 0.02px;
 border-top: 0px;
 }
 
-.email-preview .from{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
 .email-preview .subject{
+    flex-grow: 1;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    /* white-space: nowrap;
+    overflow: hidden; */
 }
 
 .email-preview .email-btns{
-    opacity: 0;
+    position: fixed;
+    right: 20px;
+    margin-left: 10px;
+}
+
+.email-preview .email-btns{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
 }
 .email-preview:hover .email-btns{
-    opacity: 1;
+    visibility: visible;
+}
+
+.email-preview:hover .date{
+    visibility: hidden;
+}
+
+.email-preview .from{
+width: 300px;
+}
+
+.email-preview .date{
+    width: 100px;
+    text-align: right;
 }

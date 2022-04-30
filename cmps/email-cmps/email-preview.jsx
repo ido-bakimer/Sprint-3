@@ -8,10 +8,10 @@ export function EmailPreview({ email, onPreviewClick, onRemove, onToggleStar,onT
     const year = date.getFullYear()
     return <div
         onClick={() => onPreviewClick(email)} className={'email-preview flex space-between ' + (email.isRead ? 'read' : '')}>
-        <span className="from">{email.status === 'inbox' ? `${email.from}(${email.status})` : `${email.to}(${email.status})`}</span>
-        <span className="subject">{email.subject}</span>
+        <div className="from">{email.status === 'inbox' ? `${email.from}(${email.status})` : `${email.to}(${email.status})`}</div>
+        <div className="subject">{email.subject}</div>
         <EmailBtns onRemove={onRemove} onToggleStar={onToggleStar} onToggleRead={onToggleRead} onRecycle={onRecycle} email={email} makeNotefromEmail={makeNotefromEmail} />
-        <span className="date">{date.getDate()}/{month}/{year}</span>
+        <div className="date">{date.getDate()}/{month}/{year}</div>
     </div>
 
 }

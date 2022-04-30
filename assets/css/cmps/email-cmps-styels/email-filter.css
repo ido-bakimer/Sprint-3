@@ -1,5 +1,10 @@
 .email-filter {
-    padding: 20px;
+    display: flex;
+    justify-content: left;
+    justify-content: space-around;
+    background-color: #9572bd;
+    padding: 5px;
+    min-height: 35.5px;
 }
 
 .email-filter form {
@@ -14,21 +19,21 @@
     margin-bottom: 5px;
 }
 
-.email-filter input{
+.email-filter input {
     gap: none;
-margin-right: none;    
-border-top-left-radius: 4px;
-border-bottom-left-radius: 4px;
-border: none;
-height: 25px;
-margin-left: 5px;
+    margin-right: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    height: 25px;
+    margin-left: 5px;
 }
 
-.email-filter button{
+.email-filter button {
     color: white;
     gap: none;
     height: 25px;
-    margin-right: none;    
+    margin-right: none;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border: none;
@@ -36,12 +41,28 @@ margin-left: 5px;
     margin-right: 5px;
 }
 
-.email-filter select{
+.email-filter select {
     color: white;
     height: 20px;
-    margin-bottom: 0;    
+    margin-bottom: 0;
     border-radius: 2px;
     border: none;
     background-color: #188fff;
     margin-right: 5px;
 }
+
+.email-sort{
+    display: flex;
+    flex-direction: column;
+flex-wrap: nowrap;}
+
+@media (min-width: 690px) {
+    .email-status {
+        flex-wrap: wrap;
+    }
+
+    .email-sort{
+        flex-direction: row;
+    }
+}
+

@@ -1,6 +1,7 @@
 .email-list{
     flex-grow: 1;
-    background-color: rgb(255, 255, 255);
-    padding: 15px;
-    margin: 10px;
+    align-items: bottom;
+    background-color: white;
+    color: black;
+margin-right: 5px;
 }
