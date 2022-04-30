@@ -1,5 +1,8 @@
 .book-preview {
     /* height: 350px; */
+    background-color: rgba(255, 255, 255, 0.8);   
+    color: black;
+    text-align: center;
     width: 250px;
     padding: 10px 0px 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.457);
@@ -9,6 +12,7 @@
 }
 
 .book-preview .img-container {
+    margin: 5px;
     max-width: 200px;
 }
 .book-preview h3{

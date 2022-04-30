@@ -32,9 +32,9 @@ export class BookDetails extends React.Component {
         bookService.remove(this.state.book.id)
             .then(this.onGoBack)
     }
-    onRemoveReview = (reviewId,bookId) => {
-        bookService.removeReview(reviewId,bookId)
-        .then(()=> this.loadBook())
+    onRemoveReview = (reviewId, bookId) => {
+        bookService.removeReview(reviewId, bookId)
+            .then(() => this.loadBook())
     }
 
     onSaveReview = (review) => {
@@ -56,24 +56,24 @@ export class BookDetails extends React.Component {
         let currency = ''
         let bookPrice
         switch (book.listPrice.currencyCode) {
-        case 'EUR':
-            currency = '€'
-            break;
-        case 'ILS':
-            currency = '₪'
-            break;
-        case 'USD':
-            currency = '$'
-            break
+            case 'EUR':
+                currency = '€'
+                break;
+            case 'ILS':
+                currency = '₪'
+                break;
+            case 'USD':
+                currency = '$'
+                break
         }
         if (book.listPrice.isOnSale) sale = 'This book is now on sale!'
 
         if (book.listPrice.amount > 150) name = 'red'
         if (book.listPrice.amount < 20) name = 'green'
-        if (!book.listPrice.amount){
-             bookPrice = 'not available'
-            name =''
-        }else bookPrice = book.listPrice.amount + currency
+        if (!book.listPrice.amount) {
+            bookPrice = 'not available'
+            name = ''
+        } else bookPrice = book.listPrice.amount + currency
 
         if (2022 - book.publishedDate > 10) publishDate = 'Veteran book'
         else publishDate = 'New!'
@@ -83,23 +83,30 @@ export class BookDetails extends React.Component {
         else if (book.pageCount < 100) displayLength = 'Light reading'
         else displayLength = 'not so light reading'
         return <section className="book-details">
-            <h3>Name : {book.title}</h3>
-            <h3 className={name}>Price : {bookPrice}</h3>
-            <LongText text={book.description} />
-            <p>Book Length : <span>{displayLength}</span></p>
-            <p>Subtitles: {book.subtilte}</p>
-            <p>Author/s: {book.authors}</p>
-            <p>Published at: {book.publishedDate}</p>
-            <p>Categories: {book.categories.map(cat => cat + ' ')}</p>
-            <p>Language: {book.language}</p>
-            <p>{publishDate} <br /> Publish date : {book.publishedDate}</p>
-            <h1>{sale}</h1>
+            <div className="book-info">
+                <h3>Name : {book.title}</h3>
+                <h3 className={name}>Price : {bookPrice}</h3>
+                <LongText text={book.description} />
+                <p>Book Length : <span>{displayLength}</span></p>
+                <p>Subtitles: {book.subtilte}</p>
+                <p>Author/s: {book.authors}</p>
+                <p>Published at: {book.publishedDate}</p>
+                <p>Categories: {book.categories.map(cat => cat + ' ')}</p>
+                <p>Language: {book.language}</p>
+                <p>{publishDate} <br /> Publish date : {book.publishedDate}</p>
+                <h1>{sale}</h1>
+            </div>
+            <div className="book-controler-container">
+                
+                <div className="book-controler">
+                    <button onClick={this.onGoBack}>Go Back!</button>
+                    <button onClick={this.onRemoveBook}>Delete Book</button>
+                    <ReviewList reviews={book.reviews} bookId={book.id} onRemove={this.onRemoveReview} />
+                    <ReviewAdd onSaveReview={this.onSaveReview} />
+                </div>
+                {/* <img className="img-container" src={`${book.thumbnail}`} /> */}
+            </div>
 
-            <button onClick={this.onGoBack}>Go Back!</button>
-            <button onClick={this.onRemoveBook}>Delete Book</button>
-
-            <ReviewList reviews={book.reviews} bookId={book.id} onRemove={this.onRemoveReview} />
-            <ReviewAdd onSaveReview={this.onSaveReview} />
 
         </section>
 

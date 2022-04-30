@@ -2,19 +2,19 @@ export function DynamicNoteInput({ noteType, handleInputSumbit }) {
     let plcholder;
     switch (noteType) {
         case 'NoteText':
-            plcholder = "Enter text"
+            plcholder = "Enter text..."
             break;
         case 'NoteImg':
-            plcholder = "Enter img url"
+            plcholder = "Enter img url..."
             break;
         case 'NoteVideo':
-            plcholder = "Enter video url"
+            plcholder = "Enter video url..."
             break;
         case 'NoteTodos':
-            plcholder = "Enter list title"
+            plcholder = "Enter list title..."
             break;
         default:
-            plcholder = 'switch error';
+            plcholder = 'Switch error';
             break;
     }
 
