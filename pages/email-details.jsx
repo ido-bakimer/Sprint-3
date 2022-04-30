@@ -7,10 +7,14 @@ export class EmailDetails extends React.Component {
         email: null,
         isCopmposing: false,
         isReplying: false,
+        showByStatus: null
     }
 
     componentDidMount() {
         this.loadEmail()
+        const seearchParams = new URLSearchParams(this.props.location.search);
+        const showByStatus = seearchParams.get('status');
+        this.setState({ showByStatus })
     }
 
     loadEmail = () => {
@@ -29,10 +33,16 @@ export class EmailDetails extends React.Component {
     onRemove = () => {
         const email = this.state.email
         emailService.updateEmail(email.id, { removeAt: Date.now(), status: 'trash' })
-            .then(this.onGoBack)
-        if (email.removeAt) {
-            emailService.remove(email.id)
-                .then(this.onGoBack)
+            .then(()=>{
+                this.onGoBack()
+                eventBusService.emit('msg',{val:`Email transferred to trash`,isSuccess:true})
+            })
+            if (email.removeAt) {
+                emailService.remove(email.id)
+                .then(()=>{
+                    this.onGoBack()
+                    eventBusService.emit('msg',{val:`Email deleted successfully`,isSuccess:true})
+                })
         }
     }
     onRecycle = () => {
@@ -41,7 +51,10 @@ export class EmailDetails extends React.Component {
         if (status === 'muki@appsus.com') status = 'inbox'
         else status = 'sent'
         emailService.updateEmail(email.id, { removeAt: null, status: 'trash' })
-            .then(this.onGoBack)
+            .then(()=>{
+                this.loadEmail()
+                eventBusService.emit('msg',{val:`Email restored successfully`,isSuccess:true})
+            })
     }
 
 
@@ -77,7 +90,7 @@ export class EmailDetails extends React.Component {
         const { email } = this.state
         if (!email) return <h1></h1>
         return <div className="email-details">
-            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} />
+            <EmailStatus onStartComposing={this.onStartComposing} onSetShowByStatus={this.onSetShowByStatus} showByStatus={this.state.showByStatus} />
             <EmailBtns email={this.state.email} onToggleStar={this.onToggleStar} onRemove={this.onRemove} onToggleRead={this.onToggleRead} onReplying={this.onReplying} onRecycle={this.onRecycle} />
             <h1>{email.status === 'inbox' ? email.from : email.to}</h1>
             <h2>subject: {email.subject}</h2>
