@@ -1,17 +1,11 @@
 
 
-.email-compose textarea{
-
-    resize: none;
-
-}
-
 .email-compose{
-    width: 60vh;
+    width: 80%;
     border-radius: 6px;
     position: fixed;
-    bottom: 0%;
-    left: 10vh;
+    bottom: 10px;
+    left: 7%;
 }
 
 .send-email-btn{
@@ -47,4 +41,11 @@ background-color: #188fff;
 .delete-email-btn:hover{
     background-color: rgb(174, 174, 174);
     cursor: pointer;
+}
+
+@media (min-width: 690px) {
+    .email-compose{
+        width: 60vh;
+
+    }
 }
