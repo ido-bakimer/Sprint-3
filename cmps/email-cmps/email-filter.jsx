@@ -24,7 +24,7 @@ export class EmailFilter extends React.Component {
 
     render() {
         const { content, read, star } = this.state.filterBy
-        return <section className="book-filter">
+        return <section className="email-filter">
             <form onSubmit={this.onFilter}>
                 <label htmlFor="by-content">Filter by:</label>
                 <input type="text" id="by-content" placeholder="Search" name="content"

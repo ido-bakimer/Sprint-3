@@ -1,0 +1,47 @@
+.email-filter {
+    padding: 20px;
+}
+
+.email-filter form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* gap: 5px; */
+}
+
+.email-filter form label {
+    margin-bottom: 5px;
+}
+
+.email-filter input{
+    gap: none;
+margin-right: none;    
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+border: none;
+height: 25px;
+margin-left: 5px;
+}
+
+.email-filter button{
+    color: white;
+    gap: none;
+    height: 25px;
+    margin-right: none;    
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: none;
+    background-color: #188fff;
+    margin-right: 5px;
+}
+
+.email-filter select{
+    color: white;
+    height: 20px;
+    margin-bottom: 0;    
+    border-radius: 2px;
+    border: none;
+    background-color: #188fff;
+    margin-right: 5px;
+}

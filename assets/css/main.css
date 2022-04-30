@@ -18,6 +18,7 @@
 @import './cmps/book-preview.css';
 @import './cmps/book-filter.css';
 @import './cmps/long-text.css';
+@import './cmps/email-cmps-styels/email-filter.css';
 @import './cmps/email-cmps-styels/email-app.css';
 @import './cmps/email-cmps-styels/email-list.css';
 @import './cmps/email-cmps-styels/email-preview.css';

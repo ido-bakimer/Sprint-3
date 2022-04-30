@@ -36,7 +36,7 @@ export class EmailCompose extends React.Component {
 
     render() {
         return <section className="email-compose">
-            <button className="delete-email-btn" onClick={this.props.onEndComposing}>✖️</button>
+            <button className="delete-email-btn" onClick={this.props.onEndComposing}>x</button>
             <form className="flex column" onSubmit={this.onSendMail}>
                 <input name="to" type="email" placeholder="to" value={this.state.newMail.to} onChange={this.handleChange} />
                 <input name="subject" type="text" placeholder="subject" value={this.state.newMail.subject} onChange={this.handleChange} />

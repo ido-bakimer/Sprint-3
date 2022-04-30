@@ -8,13 +8,13 @@
 
 .email-compose{
     margin: 20px;
-    width: 40%;
+    width: 60vh;
     /* background: none; */
     /* background-color: #fff; */
     border-radius: 6px;
     position: fixed;
     bottom: -3%;
-    left: 10%;
+    left: 10vh;
     /* transform: translate(-50%,50%); */
 }
 
@@ -23,11 +23,32 @@
 background-color: #188fff;
 }
 
+.send-email-btn:hover{
+    background:linear-gradient(270deg, #410093, #735b91);
+    cursor: pointer;
+}
+
 .delete-email-btn{
+    color: gray;
+    text-align: center;
     width: 40px;
     border: solid gray 1px; 
     border-bottom: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+}
 
+.delete-email-btn{
+    color: gray;
+    text-align: center;
+    width: 40px;
+    border: solid gray 1px; 
+    border-bottom: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.delete-email-btn:hover{
+    background-color: rgb(174, 174, 174);
+    cursor: pointer;
 }
