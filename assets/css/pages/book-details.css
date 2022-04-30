@@ -12,13 +12,22 @@
 .info-container{
     display: flex;
     flex-direction: row;
+
 }
 
 .book-details .img-container {
-    height: 100%;
-    max-height: 500px;
-    height: auto;
+    width: 200px;
+    /* height: 100%;
+    max-height: 500px; */
+    /* height: auto; */
 }
+@media (min-width: 850px) {
+    .book-details .img-container{
+        width: auto;
+        object-fit: contain;
+
+    }
+  }
 .book-details .red{
     color: red;
 }
