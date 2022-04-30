@@ -47,7 +47,6 @@ function updateNote(noteId, note) {
   let noteIdx = gNotes.findIndex((note) => note.id === noteId);
 
   if (noteIdx === -1) {
-    console.log('Error. Cant find noteIdx in updateNote');
     return;
   }
   gNotes[noteIdx] = note;

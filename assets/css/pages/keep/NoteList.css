@@ -21,14 +21,14 @@
 
 /* MEDIA QUERIES */
 /* MEDIUM */
-@media (min-width: 640px) {
+@media (min-width: 600px) {
   .note-list-container {
     column-count: 2;
   }
 }
 
 /* LARGE */
-@media (min-width: 900px) {
+@media (min-width: 850px) {
   .note-list-container {
     column-count: 3;
   }
@@ -38,5 +38,15 @@
 @media (min-width: 1200px) {
   .note-list-container {
     column-count: 4;
+  }
+}
+@media (min-width: 1600px) {
+  .note-list-container {
+    column-count: 5;
+  }
+}
+@media (min-width: 1900px) {
+  .note-list-container {
+    column-count: 6;
   }
 }

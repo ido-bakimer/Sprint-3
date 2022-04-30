@@ -43,7 +43,7 @@ export class EmailApp extends React.Component {
     }
 
     onPreviewClick = (email) => {
-        console.log(email);
+
         if (!email.isRead) {
             emailService.updateEmail(email.id, { isRead: true }).then(this.loadEmails)
         }

@@ -42,7 +42,6 @@ export class KeepApp extends React.Component {
   }
 
   onStartComposing = (info) => {
-    console.log(info);
     
     this.setState({ isCopmposing: true, info:info })
   }

@@ -26,7 +26,6 @@ export class BookApp extends React.Component {
 
     onSetFilter = (filterBy) => {
         this.setState({ filterBy }, () => {
-            console.log('filterBy from Book App', this.state.filterBy);
             this.loadBooks()
         })
     }

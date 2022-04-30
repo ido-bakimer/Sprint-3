@@ -25,7 +25,6 @@ export class GoogleSearch extends React.Component{
         
     }
     changeSearch = ({target}) => {
-        // console.log(target)
         this.setState({searchVal:target.value})
     }
     render(){

@@ -1,7 +1,6 @@
 
 
 export function EmailStatus({ onStartComposing, onSetShowByStatus, showByStatus, }) {
-console.log(showByStatus);
 const all = !showByStatus? 'active':''
 let inbox = showByStatus==='inbox'? 'active':''
 let sent = showByStatus==='sent'? 'active':''

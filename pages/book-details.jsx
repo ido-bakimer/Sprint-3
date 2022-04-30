@@ -48,7 +48,6 @@ export class BookDetails extends React.Component {
     render() {
         const { book } = this.state
         if (!book) return <div>Loading...</div>
-        console.log(book);
         let displayLength = ''
         let publishDate = ''
         let name = ''

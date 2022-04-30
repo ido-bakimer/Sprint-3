@@ -27,7 +27,7 @@ export class EmailFilter extends React.Component {
         return <section className="email-filter">
             <form onSubmit={this.onFilter}>
                 <label htmlFor="by-content">Filter by:</label>
-                <input type="text" id="by-content" placeholder="Search" name="content"
+                <input type="text" id="by-content" autoComplete="off" placeholder="Search" name="content"
                     value={content} onChange={this.handleChange} />
                 <button>Search</button>
                 <label htmlFor="read" title="Filter by read">

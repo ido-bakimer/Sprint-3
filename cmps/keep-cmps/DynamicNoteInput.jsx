@@ -5,7 +5,7 @@ export function DynamicNoteInput({ noteType, handleInputSumbit }) {
             plcholder = "Enter text..."
             break;
         case 'NoteImg':
-            plcholder = "Enter img url..."
+            plcholder = "Enter image url..."
             break;
         case 'NoteVideo':
             plcholder = "Enter video url..."
@@ -19,6 +19,6 @@ export function DynamicNoteInput({ noteType, handleInputSumbit }) {
     }
 
     return (
-        <input name={noteType} placeholder={plcholder} onKeyDown={handleInputSumbit} />
+        <input autoComplete="off" name={noteType} placeholder={plcholder} onKeyDown={handleInputSumbit} />
     )
 }

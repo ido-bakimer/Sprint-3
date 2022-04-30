@@ -1,4 +1,5 @@
 import { noteService } from '../../services/Keep.service.js';
+import { eventBusService } from '../../services/event-bus-service.js';
 import { DynamicNoteInput } from './DynamicNoteInput.jsx';
 
 export class CreateNote extends React.Component {
@@ -16,6 +17,8 @@ export class CreateNote extends React.Component {
             noteService.createNote(ev.target.value, this.state.noteType)
             this.props.loadNotes();
             this.clearFields(ev.target)
+            eventBusService.emit('msg',{val:`Note created`,isSuccess:true})
+
         }
     }
 

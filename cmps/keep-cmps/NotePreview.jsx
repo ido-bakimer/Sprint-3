@@ -1,4 +1,5 @@
 import { noteService } from '../../services/Keep.service.js';
+import { eventBusService } from '../../services/event-bus-service.js';
 import { NoteColorPalette } from '../keep-cmps/NoteColorPalette.jsx';
 import { DynamicNote } from './DynamicNote.jsx';
 
@@ -40,8 +41,11 @@ export class NotePreview extends React.Component {
         this.setState({ isShowColorPalette: true })
     }
 
-    addDefaultImgSrc(ev) {
+    addDefaultImgSrc(ev,note) {
         ev.target.src = 'http://ca-upload.com/here/img/626aa35a4fb81.jpg';
+        note.info.imgUrl = 'http://ca-upload.com/here/img/626aa35a4fb81.jpg'
+        noteService.updateNote(note.id,note)
+        eventBusService.emit('msg',{val:`Cant find image url turn in to deffault`,isSuccess:false})
     }
 
     handleInputSumbit = ({ keyCode, target }) => {
@@ -66,9 +70,7 @@ export class NotePreview extends React.Component {
         }
     }
 
-    // onEditBtn(ev) {
-    //     console.log('onEditBtn func. my ev.target is:', ev.target);
-    // }
+
 
     clearFields(target) {
         target.value = '';

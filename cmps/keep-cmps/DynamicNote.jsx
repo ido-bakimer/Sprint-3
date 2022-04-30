@@ -15,7 +15,6 @@ export function DynamicNote({ note, addDefaultImgSrc, toggleTodo, deleteTodo, ad
         case 'NoteTodos':
             return <NoteTodo note={note} toggleTodo={toggleTodo} deleteTodo={deleteTodo} addTodo={addTodo} />
         default:
-            console.log('switch error');
             return <NoteText note={note} />
     }
 }
