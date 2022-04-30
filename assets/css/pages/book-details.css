@@ -1,9 +1,12 @@
 .book-details {
+    background-color: rgba(255, 255, 255, 0.25);
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    gap: 5px;
     padding: 20px;
-    align-items: center;
+    align-items: left;
+    justify-content: flex-end;
 }
 
 .book-details .img-container {
@@ -14,4 +17,34 @@
 }
 .book-details .green{
     color: green;
+}
+
+.book-details .book-details{
+width: 50%;
+display: flex;
+flex-direction: column;
+text-overflow: ellipsis;
+}
+
+.book-controler-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+
+.book-controler{
+background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+
+.reviews{
+    height: 20%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.book-controler .img-container{
+    height: 80%;
 }
