@@ -1,4 +1,11 @@
+import { eventBusService } from '../services/event-bus-service.js'
+const {useEffect} = React
+
 export function Home() {
+
+    useEffect(()=>{
+        eventBusService.emit('changeHeader',``)
+    })
 
     return <section className="home">
         <h2 class="animate__animated animate__fadeInRight">Welcome to YAWHO?</h2>

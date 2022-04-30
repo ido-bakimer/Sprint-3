@@ -1,4 +1,5 @@
 import { bookService } from '../services/book.service.js'
+import { eventBusService } from '../services/event-bus-service.js'
 
 import { GoogleSearch } from '../cmps/book-cmps/google-search.jsx'
 import { BookList } from '../cmps/book-cmps/book-list.jsx'
@@ -14,6 +15,7 @@ export class BookApp extends React.Component {
     }
 
     componentDidMount() {
+        eventBusService.emit('changeHeader',`Books`)
         this.loadBooks()
     }
 

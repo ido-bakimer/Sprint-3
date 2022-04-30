@@ -1,6 +1,8 @@
+import { noteService } from '../services/Keep.service.js';
+import { eventBusService } from '../services/event-bus-service.js'
+
 import { CreateNote } from '../cmps/keep-cmps/CreateNote.jsx';
 import { NoteList } from '../cmps/keep-cmps/NoteList.jsx';
-import { noteService } from '../services/Keep.service.js';
 import { Loader } from '../cmps/Loader.jsx';
 import { EmailCompose } from '../cmps/email-cmps/email-compose.jsx';
 
@@ -13,6 +15,7 @@ export class KeepApp extends React.Component {
   }
 
   componentDidMount() {
+    eventBusService.emit('changeHeader',`Keep`)
     this.loadNotes();
   }
 

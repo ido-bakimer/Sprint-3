@@ -1,4 +1,5 @@
 import { EmailBtns } from "./email-btns.jsx"
+import { LongText } from "../long-text"
 
 const { Link } = ReactRouterDOM
 export function EmailPreview({ email, onPreviewClick, onRemove, onToggleStar,onToggleRead, onRecycle, makeNotefromEmail }) {

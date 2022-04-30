@@ -18,6 +18,7 @@ export class EmailApp extends React.Component {
     }
 
     componentDidMount() {
+        eventBusService.emit('changeHeader',`Email`)
         this.loadEmails()
         const seearchParams = new URLSearchParams(this.props.location.search);
         const status = seearchParams.get('status');

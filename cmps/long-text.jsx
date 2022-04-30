@@ -2,7 +2,14 @@ export class LongText extends React.Component {
     state = {
         isShortTxtShow: true,
         text: this.props.text.substring(0, 100),
-        btnTxt: 'Show more'
+        btnTxt: 'Show more',
+        isBtnShow:true,
+    }
+
+    componentDidMount(){
+        if(this.props.dontShowBtn){
+            this.setState({isBtnShow:false})
+        }
     }
 
     toggleTxtLng = () => {
@@ -17,10 +24,10 @@ export class LongText extends React.Component {
     }
 
     render() {
-        return <section className="longTxt">
-            <p>{this.state.text}  <span onClick={this.toggleTxtLng} className="showTxt">{this.state.btnTxt}</span></p>
-            <span></span>
+        return <span className="longTxt">
+            <span>{this.state.text}</span>
+            {this.state.isBtnShow&&<span onClick={this.toggleTxtLng} className="showTxt">{this.state.btnTxt}</span>}
             
-        </section>
+        </span>
     }
 }
