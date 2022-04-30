@@ -4,7 +4,7 @@ const { Link } = ReactRouterDOM
 export function EmailPreview({ email, onPreviewClick, onRemove, onToggleStar,onToggleRead, onRecycle, makeNotefromEmail }) {
     // console.log(email);
     const date = new Date(email.sentAt)
-    const month = date.toLocaleString('default', { month: 'short' })
+    const month = date.toLocaleString('en-us', { month: 'short' })
     const year = date.getFullYear()
     return <div
         onClick={() => onPreviewClick(email)} className={'email-preview flex space-between ' + (email.isRead ? 'read' : '')}>

@@ -37,7 +37,7 @@ export class NotePreview extends React.Component {
     }
 
     showColorPalette = () => {
-        this.setState({ isShowColorPalette: !this.state.isShowColorPalette })
+        this.setState({ isShowColorPalette: true })
     }
 
     addDefaultImgSrc(ev) {
@@ -189,7 +189,7 @@ export class NotePreview extends React.Component {
                 </section>
 
 
-                <section className={`note-preview-control-panel flex justify-end align-end ${!isPanelHover && 'visibility-hidden'}`}>
+                <section className={`note-preview-control-panel flex justify-end align-end `}>
 
                     <div className="note-preview-btn-container ">
                         <button onClick={this.togglePin}>
@@ -214,6 +214,11 @@ export class NotePreview extends React.Component {
                     <div className="note-preview-btn-container ">
                         <button onClick={this.onDeleteNote}>
                             <i className="note-btn fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div className="note-preview-btn-container ">
+                        <button onClick={()=> this.props.onStartComposing(note.info)}>
+                            <i className="note-btn fas fa-envelope"></i>
                         </button>
                     </div>
                 </section>

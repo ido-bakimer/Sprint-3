@@ -1,6 +1,6 @@
 import { NotePreview } from './NotePreview.jsx';
 
-export function NoteList({ notes, loadNotes }) {
+export function NoteList({ notes, loadNotes, onStartComposing}) {
     if (notes.length === 0) {
         return null;
     }
@@ -11,7 +11,7 @@ export function NoteList({ notes, loadNotes }) {
             <div className="note-list-container">
 
                 {notes.map(note => {
-                    return <NotePreview note={note} key={note.id} loadNotes={loadNotes} />
+                    return <NotePreview onStartComposing={onStartComposing} note={note} key={note.id} loadNotes={loadNotes} />
                 })}
             </div>
         </div>

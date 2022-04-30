@@ -17,3 +17,6 @@
     white-space: nowrap;
     overflow: hidden
 }
+.book-preview:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.823);
+}
