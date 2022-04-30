@@ -83,28 +83,31 @@ export class BookDetails extends React.Component {
         else if (book.pageCount < 100) displayLength = 'Light reading'
         else displayLength = 'not so light reading'
         return <section className="book-details">
-            <div className="book-info">
-                <h3>Name : {book.title}</h3>
-                <h3 className={name}>Price : {bookPrice}</h3>
-                <LongText text={book.description} />
-                <p>Book Length : <span>{displayLength}</span></p>
-                <p>Subtitles: {book.subtilte}</p>
-                <p>Author/s: {book.authors}</p>
-                <p>Published at: {book.publishedDate}</p>
-                <p>Categories: {book.categories.map(cat => cat + ' ')}</p>
-                <p>Language: {book.language}</p>
-                <p>{publishDate} <br /> Publish date : {book.publishedDate}</p>
-                <h1>{sale}</h1>
+            <button onClick={this.onGoBack}>Go Back!</button>
+            <button onClick={this.onRemoveBook}>Delete Book</button>
+            <div className="info-container">
+                <div className="book-info">
+                    <h3>Name : {book.title}</h3>
+                    <h3 className={name}>Price : {bookPrice}</h3>
+                    <LongText text={book.description} />
+                    <p>Book Length : <span>{displayLength}</span></p>
+                    <p>Subtitles: {book.subtilte}</p>
+                    <p>Author/s: {book.authors}</p>
+                    <p>Published at: {book.publishedDate}</p>
+                    <p>Categories: {book.categories.map(cat => cat + ' ')}</p>
+                    <p>Language: {book.language}</p>
+                    <p>{publishDate} <br /> Publish date : {book.publishedDate}</p>
+                    <h1>{sale}</h1>
+                </div>
+                <img className="img-container" src={`${book.thumbnail}`} />
             </div>
             <div className="book-controler-container">
-                
+
                 <div className="book-controler">
-                    <button onClick={this.onGoBack}>Go Back!</button>
-                    <button onClick={this.onRemoveBook}>Delete Book</button>
+
                     <ReviewList reviews={book.reviews} bookId={book.id} onRemove={this.onRemoveReview} />
                     <ReviewAdd onSaveReview={this.onSaveReview} />
                 </div>
-                {/* <img className="img-container" src={`${book.thumbnail}`} /> */}
             </div>
 
 
