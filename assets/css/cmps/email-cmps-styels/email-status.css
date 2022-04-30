@@ -11,6 +11,10 @@
 	padding: 5px;
 }
 
+.email-details .email-status{
+	flex-direction: column;
+}
+
 .email-status-btn:hover{
 	background-color: rgba(128, 128, 128, 0.486);
 }
