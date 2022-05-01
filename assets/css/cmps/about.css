@@ -1,5 +1,4 @@
-.about{
-}
+
 
 .about .img{
   border-radius: 50%;
@@ -9,66 +8,100 @@
 
 .about h3{
   font-size: 1.5rem;
-  color: red;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.member-container>*{
+padding: 5px;
+}
+
+.member-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about h4{
+  font-size: 1.5rem;
+text-align: center;
+}
+
+.member-details p{
+  transition: 1s;
+  opacity: 100%;
+  max-width: 40vh;
+  border-radius: 2px;
+  padding: 3px;
+  border: solid rgba(255, 255, 255, 0.521) 1px;
+  background-color: rgba(255, 255, 255, 0.245);
+  color: white;
+  word-wrap: normal ;
+}
+
+.member-container:hover :nth-child(2){
+  transition: 1s;
+  /* color: rgb(174, 133, 255);
+text-shadow: 0px 0px rgb(174, 133, 255); */
+}
+
+.member-container:hover :last-child{
+  transition: 1s;
+  opacity: 100%;
+}
+
+.team-container >*{
+margin: 5px;
 }
 
 .team-container{
   transition: 1s;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .about-container .profile-pic{
   transition: 1s;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   border-radius: 50%;
-  width: 40vh;
+  width: 15vh;
 
 }
 
 .about-container .profile-pic:hover{
-  filter: grayscale(0%);
+  filter: none;
   border-radius: 50%;
-  width: 45vh;
-}
-/* .about-container {
-  margin-top: 300px;
-  color: white;
+  width: 15vh;
 }
 
-.about-container h2 {
-  margin-bottom: 10px;
+.about .forest-container{
+  z-index: -1;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
 }
 
-
-.about-container a {
-  color: #444;
-  padding: 5px 10px;
-  background-color: white;
-  border-radius: 3px;
+@media (min-width: 660px) {
+  .member-container {
+      flex-direction: column;
+  }
+  .about-container .profile-pic{
+    transition: 1s;
+    filter: grayscale(100%);
+    border-radius: 50%;
+    width: 30vh;
+  
+  }
+  .about-container .profile-pic:hover{
+    filter: none;
+    border-radius: 50%;
+    width: 40vh;
+  }
+  .member-details p{
+    opacity: 0%;
+  }
+  
 }
-
-.about-container a:not(:first-child) {
-  margin: 20px;
-}
-
-.about-container nav {
-  margin: 20px 0px;
-}
-
-.about-container a:hover {
-  background-color: #444;
-  color: white;
-}
-
-.about-team h4,
-.about-vision h4 {
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
-.about-team li,
-.about-vision li {
-  margin-bottom: 10px;
-} */

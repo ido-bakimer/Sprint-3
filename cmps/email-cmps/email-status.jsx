@@ -10,6 +10,6 @@ let trash = showByStatus==='trash'? 'active':''
         <button className={`email-status-btn ${all}`} onClick={() => onSetShowByStatus(null)}>All</button>
         <button className={`email-status-btn ${inbox}`} onClick={() => onSetShowByStatus('inbox')}>Inbox</button>
         <button className={`email-status-btn ${sent}`} onClick={() => onSetShowByStatus('sent')}>Sent</button>
-        <button className={`email-status-btn ${trash}`} onClick={() => onSetShowByStatus('trash')}>trash</button>
+        <button className={`email-status-btn ${trash}`} onClick={() => onSetShowByStatus('trash')}>Trash</button>
     </section>
 }
