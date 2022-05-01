@@ -1,32 +1,32 @@
-.email-preview.read{
+.email-preview.read {
     background-color: var(--email-read);
     color: rgb(214, 214, 214);
     color: gray;
 }
 
-.email-preview{
+.email-preview {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-background-color: white;
-border: rgba(143, 143, 143, 0.367) solid 0.02px;
-border-top: 0px;
+    background-color: white;
+    border: rgba(143, 143, 143, 0.367) solid 0.02px;
+    border-top: 0px;
 }
 
-.mail-prev-container{
+.mail-prev-container {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.email-preview .subject{
+.email-preview .subject {
     flex-grow: 1;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.email-preview .email-btns{
+.email-preview .email-btns {
     position: relative;
     /* margin-top: 18px; */
     font-size: 1.3rem;
@@ -34,7 +34,7 @@ border-top: 0px;
     margin-left: 20px;
 }
 
-.email-preview .email-btns{
+.email-preview .email-btns {
     width: 100px;
     display: flex;
     justify-content: space-between;
@@ -42,19 +42,20 @@ border-top: 0px;
     margin-right: 3px;
     align-self: center;
 }
-.email-preview:hover .email-btns{
+
+.email-preview:hover .email-btns {
     display: flex;
 }
 
-.email-preview:hover .date{
+.email-preview:hover .date {
     visibility: visible;
 }
 
-.email-preview .from{
-width: 300px;
+.email-preview .from {
+    width: 300px;
 }
 
-.email-preview .date{
+.email-preview .date {
     width: 100px;
     text-align: right;
 }
@@ -63,20 +64,38 @@ width: 300px;
     .email-preview {
         flex-direction: row;
     }
-    .email-preview:hover .date{
+
+    .email-preview:hover .date {
         visibility: hidden;
     }
-    .email-preview .email-btns{
+
+    .email-preview .email-btns {
         display: none;
     }
-    .email-preview .email-btns{
+
+    .email-preview .email-btns {
         right: 2px;
         margin-left: 0px;
         margin-top: 0px;
         font-size: 1rem;
         padding: 0px;
     }
-    .mail-prev-container{
+
+    .mail-prev-container {
         flex-direction: row;
-    }    
-  }
+    }
+}
+
+@media (max-width: 515px) {
+    .mail-prev-container {
+        max-width: 230px;
+    }
+    
+}
+@media (max-width: 400px){
+
+    .email-preview .email-btns{
+        margin-top: 10px;
+        z-index: 999;
+    }
+}

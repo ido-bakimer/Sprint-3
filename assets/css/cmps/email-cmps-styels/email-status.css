@@ -1,6 +1,7 @@
 .email-status{
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 }
 .email-status-btn{
 	color: white;
@@ -25,7 +26,7 @@
 
 .email-status .add-email {
     background-color: #188fff;
-	padding: 11.5px;
+	padding: 18px 11.5px;
     margin-bottom: 0px;
 	border-radius:1px;
 	/* border:1px solid #w; */
@@ -47,8 +48,9 @@
 	}
 }
 
-/* @media (min-width: 530px) {
-	.email-status{
-		flex-direction: column;
+@media (max-width: 689px) {
+	.email-status .add-email {
+		background-color: #188fff;
+		padding: 11.5px;
 	}
-} */
+}
