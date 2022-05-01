@@ -86,6 +86,7 @@ export class BookDetails extends React.Component {
             <button onClick={this.onRemoveBook}>Delete Book</button>
             <div className="info-container">
                 <div className="book-info">
+                <img className="img-container" src={`${book.thumbnail}`} />
                     <h3>Name : {book.title}</h3>
                     <h3 className={name}>Price : {bookPrice}</h3>
                     <LongText text={book.description} />
@@ -98,7 +99,6 @@ export class BookDetails extends React.Component {
                     <p>{publishDate} <br /> Publish date : {book.publishedDate}</p>
                     <h1>{sale}</h1>
                 </div>
-                <img className="img-container" src={`${book.thumbnail}`} />
             </div>
             <div className="book-controler-container">
 

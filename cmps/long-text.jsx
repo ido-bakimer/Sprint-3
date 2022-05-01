@@ -24,10 +24,10 @@ export class LongText extends React.Component {
     }
 
     render() {
-        return <span className="longTxt">
+        return <p className="longTxt">
             <span>{this.state.text}</span>
             {this.state.isBtnShow&&<span onClick={this.toggleTxtLng} className="showTxt">{this.state.btnTxt}</span>}
             
-        </span>
+        </p>
     }
 }
