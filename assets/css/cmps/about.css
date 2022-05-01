@@ -1,4 +1,38 @@
-.about-container {
+.about{
+}
+
+.about .img{
+  border-radius: 50%;
+  width:100px;
+  height: 100px;
+}
+
+.about h3{
+  font-size: 1.5rem;
+  color: red;
+}
+
+.team-container{
+  transition: 1s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about-container .profile-pic{
+  transition: 1s;
+  filter: grayscale(100%);
+  border-radius: 50%;
+  width: 40vh;
+
+}
+
+.about-container .profile-pic:hover{
+  filter: grayscale(0%);
+  border-radius: 50%;
+  width: 45vh;
+}
+/* .about-container {
   margin-top: 300px;
   color: white;
 }
@@ -7,12 +41,12 @@
   margin-bottom: 10px;
 }
 
+
 .about-container a {
   color: #444;
   padding: 5px 10px;
   background-color: white;
   border-radius: 3px;
-  /* margin-right: 10px; */
 }
 
 .about-container a:not(:first-child) {
@@ -37,4 +71,4 @@
 .about-team li,
 .about-vision li {
   margin-bottom: 10px;
-}
+} */

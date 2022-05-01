@@ -9,6 +9,8 @@
   border-radius: 8px;
   page-break-inside: avoid;
   margin-bottom: 15px;
+  transition: 1s;
+
 /* box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.5); */
 }
 .note-preview-control-panel{

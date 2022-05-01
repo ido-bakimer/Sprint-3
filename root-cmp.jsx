@@ -8,6 +8,7 @@ import { KeepApp } from './pages/keep-app.jsx'
 import { EmailApp } from './pages/email-app.jsx'
 import { EmailDetails } from './pages/email-details.jsx'
 import { MsgBox } from './cmps/msg-box.jsx'
+import {Footer} from './cmps/footer.jsx'
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 
@@ -26,5 +27,6 @@ export function App() {
             </Switch>
         <MsgBox/>
     </section>
+
     </Router >
 }

@@ -14,6 +14,9 @@
 
 /* Cmps */
 
+
+
+@import './cmps/about.css';
 @import './cmps/book-app.css';
 @import './cmps/book-list.css';
 @import './cmps/book-preview.css';
